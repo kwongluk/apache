@@ -10,7 +10,7 @@ SSLProxyEngine On
 SSLCertificateFile /path/to/certificate.pem
 SSLCertificateKeyFile /path/to/key.pem
 
-
+ProxyPreserveHost On
 ProxyRequests Off
 
 # to define a proxy server that can handle requests for any URL path.
