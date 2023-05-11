@@ -1,6 +1,7 @@
 LoadModule proxy_module modules/mod_proxy.so
 LoadModule proxy_http_module modules/mod_proxy_http.so
 
+##/etc/httpd/conf/httpd.conf
 RedirectMatch ^/$ https://example.com/dashboard/
 
 SSLEngine On
