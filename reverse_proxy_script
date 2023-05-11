@@ -10,15 +10,22 @@ SSLCertificateKeyFile /path/to/key.pem
 
 ProxyRequests Off
 
+# to define a proxy server that can handle requests for any URL path.
 <Proxy *>
     Order deny,allow
     Allow from all
+    Allow from uat.intranet.example.com
 </Proxy>
 
-ProxyPass / http://backend-server/
-ProxyPassReverse / http://backend-server/
+    <Location /path1>
+        ProxyPass http://backend-server1:8080/
+        ProxyPassReverse http://backend-server1:8080/
+    </Location>
 
-
-
+    <Location /path2>
+        ProxyPass http://backend-server2:8080/
+        ProxyPassReverse http://backend-server2:8080/
+    </Location>
+    
 Protocols h2 http/1.1
 H2Direct on
