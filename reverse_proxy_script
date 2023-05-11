@@ -1,6 +1,13 @@
 LoadModule proxy_module modules/mod_proxy.so
 LoadModule proxy_http_module modules/mod_proxy_http.so
 
+SSLEngine On
+SSLProxyEngine On
+
+SSLCertificateFile /path/to/certificate.pem
+SSLCertificateKeyFile /path/to/key.pem
+
+
 ProxyRequests Off
 
 <Proxy *>
